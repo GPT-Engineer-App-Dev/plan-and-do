@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Box, Heading, Input, Button, List, ListItem, ListIcon, IconButton } from '@chakra-ui/react';
+import { Box, Heading, Input, Button, List, ListItem, ListIcon, IconButton, Link } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 import { FaPlus, FaTrash, FaCheckCircle, FaRegCircle } from 'react-icons/fa';
 
 const Index = () => {
@@ -24,7 +25,10 @@ const Index = () => {
 
   return (
     <Box p={5}>
-      <Heading mb={4}>Todo App</Heading>
+      <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Heading mb={4}>Todo App</Heading>
+        <Button as={RouterLink} to="/about" colorScheme="teal">About</Button>
+      </Box>
       <Box mb={4}>
         <Input
           placeholder="Add a new task"
